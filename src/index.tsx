@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import store, { StoreContext } from './stores';
+import App from './ToDoApp/App';
+import store, { StoreContext } from './ToDoApp/stores';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
