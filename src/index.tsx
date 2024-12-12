@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './ToDoApp/App';
-import store, { StoreContext } from './ToDoApp/stores';
+import App from './AlbumsApp/App';
+import store, { StoreContext } from './AlbumsApp/stores';
+// import App from './ToDoApp/App';
+// import store, { StoreContext } from './ToDoApp/stores';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
