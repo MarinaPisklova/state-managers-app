@@ -16,9 +16,9 @@ const TodoInput = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className={styles['todo-input-group']}>
-            <input name="todo-input" placeholder="Add todo..." />
-            <button type="submit">Add Todo</button>
+        <form onSubmit={handleSubmit} className={styles.input}>
+            <input name="todo-input" placeholder="Сходить в магазин..." />
+            <button type="submit">Добавить</button>
         </form>
     );
 };

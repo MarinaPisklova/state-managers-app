@@ -1,46 +1,131 @@
-# Getting Started with Create React App
+# Модульное React-приложение
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Этот проект представляет собой **модульное React-приложение**, созданное для экспериментов с различными библиотеками управления состоянием и архитектурными подходами. Каждая часть приложения является автономным модулем, что позволяет разрабатывать и масштабировать их независимо.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Содержание
 
-### `npm start`
+-   [Обзор](#обзор)
+-   [Модули](#модули)
+    -   [ToDo App](#todo-app)
+    -   [Albums App](#albums-app)
+-   [Используемые технологии](#используемые-технологии)
+-   [Как начать](#как-начать)
+-   [Структура проекта](#структура-проекта)
+-   [Планы на будущее](#планы-на-будущее)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Обзор
 
-### `npm test`
+Приложение состоит из нескольких модулей, каждый из которых является полигоном для изучения и реализации различных библиотек управления состоянием. Основная цель проекта — сравнить их сильные и слабые стороны на практике.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Для оптимизации производительности и масштабируемости используется **Code Splitting** с помощью `React.lazy` и `Suspense`, что позволяет динамически загружать модули.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Модули
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### ToDo App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Путь:** `/todos`
 
-### `npm run eject`
+-   **Описание:** Простое приложение для управления задачами.
+-   **Используемые технологии:**
+    -   React
+    -   MobX
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Albums App
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Путь:** `/albums`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-   **Описание:** Приложение для просмотра списка альбомов и их деталей.
+-   **Используемые технологии:**
+    -   React
+    -   MobX
+    -   React Query
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## Используемые технологии
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-   **React**: Основная библиотека для построения пользовательских интерфейсов.
+-   **React Router**: Для управления маршрутизацией на стороне клиента.
+-   **MobX**: Библиотека для управления состоянием, используемая в обоих модулях.
+-   **React Query**: Для управления состоянием сервера в модуле Albums.
+-   **React.lazy** и **Suspense**: Для разделения кода и ленивой загрузки модулей.
+-   **Context API**: Для глобального управления состоянием в сочетании с MobX.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+## Как начать
+
+### Необходимые инструменты
+
+Перед началом работы убедитесь, что у вас установлены:
+
+-   Node.js (>=16.x)
+-   npm или yarn
+
+### Установка
+
+1. Клонируйте репозиторий:
+
+    ```bash
+    git clone https://github.com/your-username/modular-react-app.git
+    cd modular-react-app
+    ```
+
+2. Установите зависимости:
+
+    ```bash
+    npm install
+    # или
+    yarn install
+    ```
+
+3. Запустите сервер разработки:
+
+    ```bash
+    npm start
+    # или
+    yarn start
+    ```
+
+4. Откройте приложение в браузере:
+    ```
+    http://localhost:3000
+    ```
+
+---
+
+## Структура проекта
+
+Проект организован следующим образом:
+
+```
+.
+├── src
+│   ├── modules
+│   │   ├── AlbumsApp
+│   │   │   ├── components
+│   │   │   ├── pages
+│   │   │   ├── stores
+│   │   │   └── App.jsx
+│   │   ├── ToDoApp
+│   │   │   ├── components
+│   │   │   ├── pages
+│   │   │   ├── stores
+│   │   │   └── App.jsx
+│   ├── shared
+│   │   └── components
+│   ├── App.jsx
+│   └── index.js
+├── package.json
+└── README.md
+```
+
+-   **`modules`**: Содержит код каждого модуля.
+-   **`shared`**: Общие компоненты или утилиты, которые можно использовать в разных модулях.
+-   **`App.jsx`**: Точка входа для приложения, управляющая маршрутизацией.

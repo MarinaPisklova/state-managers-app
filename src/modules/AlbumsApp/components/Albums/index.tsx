@@ -1,5 +1,5 @@
+import { useStore } from '../../stores';
 import AlbumsList from '../AlbumsList/AlbumsList';
-import { useStore } from '../stores';
 import styles from './Albums.module.css';
 import { observer } from 'mobx-react-lite';
 
@@ -16,7 +16,7 @@ const Albums = () => {
     return (
         <>
             <input
-                placeholder="Enter the name of a Album"
+                placeholder="Начните вводить название альбома"
                 className={styles.input}
                 onChange={(e) => app.handleSearchQueryChange(e.target.value)}
             />

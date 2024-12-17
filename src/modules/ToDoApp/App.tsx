@@ -1,8 +1,8 @@
 import { observer, useLocalObservable } from 'mobx-react-lite';
 import styles from './App.module.css';
-import store, { useStore } from './stores';
-import TodoInput from './ToDo/TodoInput';
-import TodoList from './ToDo/TodoList';
+import store, { StoreContext, useStore } from './stores';
+import TodoInput from './components/TodoInput';
+import TodoList from './components/TodoList';
 
 const App = observer(({ todos }: { todos: typeof store.todos }) => {
     const appUI = useLocalObservable(() => ({
@@ -14,9 +14,9 @@ const App = observer(({ todos }: { todos: typeof store.todos }) => {
     }));
 
     return (
-        <div className="app">
+        <div className={styles.app}>
             <TodoInput />
-            <div className={styles['todo-list-wrapper']}>
+            <div className={styles.wrapper}>
                 <h2 onClick={appUI.toggleTodoVisibility}>
                     <span>{appUI.todosVisible ? '-' : '+'}</span>
                     Todos (unfinished {todos.unfinishedTodos.length})
@@ -30,7 +30,11 @@ const App = observer(({ todos }: { todos: typeof store.todos }) => {
 const AppWrapper = () => {
     const { todos } = useStore();
 
-    return <App todos={todos} />;
+    return (
+        <StoreContext.Provider value={store}>
+            <App todos={todos} />
+        </StoreContext.Provider>
+    );
 };
 
 export { App };

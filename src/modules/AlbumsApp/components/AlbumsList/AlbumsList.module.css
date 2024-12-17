@@ -1,15 +1,15 @@
-.albums-link {
+.link {
   color: #333;
   text-decoration: none;
   cursor: pointer;
 }
 
-.albums-link:nth-child(2n) {
+.link:nth-child(2n) {
   background-color: #f6f6f6;
   display: block;
 }
 
-.load-more-btn {
+.btn {
   padding: 1rem .5rem;
   background: #48f;
   margin: 2rem auto;

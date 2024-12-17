@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 import AlbumsListItem from './AlbumsListItem';
 import SkeletonListItem from './SkeletonListItem';
-import { getPhotos } from '../Api';
+import { getPhotos } from '../../Api';
 
 const AlbumsListItemWrapper = ({ title, id }: { title: string; id: string }) => {
     const { data, isLoading } = useQuery(['albums-detail', id], getPhotos(id), {

@@ -1,11 +1,11 @@
 import { useInfiniteQuery } from 'react-query';
-import { Link } from 'react-router-dom';
-import { getAlbums } from '../Api';
+import { getAlbums } from '../../Api';
 import { observer } from 'mobx-react-lite';
 import styles from './AlbumsList.module.css';
-import { useStore } from '../stores';
+import { useStore } from '../../stores';
 import { useEffect } from 'react';
 import AlbumsListItem from '../AlbumsListItem';
+import { NavLink } from 'react-router-dom';
 
 const AlbumsList = ({ filter }: { filter: (e: any) => boolean }) => {
     const { app } = useStore();
@@ -36,20 +36,20 @@ const AlbumsList = ({ filter }: { filter: (e: any) => boolean }) => {
             {!isLoading &&
                 data?.pages.map((page) =>
                     page.data.filter(filter).map((e: any) => (
-                        <Link
-                            to={`/details/${e.id}`}
+                        <NavLink
+                            to={`/albums/${e.id}`}
                             key={e.id}
-                            className={styles['albums-link']}
+                            className={styles.link}
                             onClick={handleAlbumClick}
                         >
                             <AlbumsListItem {...e} />
-                        </Link>
+                        </NavLink>
                     )),
                 )}
 
             {hasNextPage && (
-                <button className={styles['load-more-btn']} onClick={() => fetchNextPage()}>
-                    Load More
+                <button className={styles.btn} onClick={() => fetchNextPage()}>
+                    Показать еще
                 </button>
             )}
         </>

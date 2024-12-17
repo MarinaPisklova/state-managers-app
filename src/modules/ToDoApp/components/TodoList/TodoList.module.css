@@ -1,11 +1,11 @@
-.todo-list {
+.list {
   display: grid;
   gap: 1rem;
   list-style-type: none;
   padding: 0;
 }
 
-.todo-list li {
+.list li {
   box-shadow: 0 0 10px #3333332C;
   user-select: none;
   display: flex;
@@ -13,28 +13,28 @@
   justify-content: space-between;
 }
 
-.todo-list li>* {
+.list li>* {
   padding: 1rem;
 }
 
-.todo-list label {
+.list label {
   flex-grow: 1;
 }
 
-.todo-list button {
+.list button {
   border: none;
   background-color: transparent;
 }
 
-.todo-list label.done {
+.list label.done {
   text-decoration: line-through;
 }
 
-.todo-list .remove {
+.list .remove {
   color: #FF0000;
   cursor: pointer;
 }
 
-.todo-list .remove:not(.done) {
+.list .remove:not(.done) {
   display: none;
 }

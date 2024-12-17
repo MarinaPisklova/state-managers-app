@@ -14,7 +14,7 @@ const TodoList = () => {
     };
 
     return (
-        <ul className={styles['todo-list']}>
+        <ul className={styles.list}>
             {todos.list.map((t) => (
                 <li key={t.id}>
                     <label htmlFor={String(t.id)} className={t.isDone ? styles.done : ''}>
@@ -25,7 +25,7 @@ const TodoList = () => {
                         onClick={handleRemoveTodo(t)}
                         className={[styles.remove, t.isDone && styles.done].join(' ')}
                     >
-                        remove
+                        удалить
                     </button>
 
                     <button onClick={handleToggleTodo(t)}>

@@ -1,16 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './AlbumsApp/App';
-import store, { StoreContext } from './AlbumsApp/stores';
-// import App from './ToDoApp/App';
-// import store, { StoreContext } from './ToDoApp/stores';
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
     <React.StrictMode>
-        <StoreContext.Provider value={store}>
-            <App />
-        </StoreContext.Provider>
+        <App />
     </React.StrictMode>,
 );
